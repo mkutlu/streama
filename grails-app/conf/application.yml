@@ -17,7 +17,7 @@ environments:
         dataSource:
             dbCreate: update
             driverClassName:  'com.mysql.jdbc.Driver'
-            url: jdbc:mysql://localhost/streama
+            url: jdbc:mysql://localhost:8000/streama
             username: root
             password:
     development-no-mysql:
@@ -57,7 +57,7 @@ environments:
         dataSource:
             dbCreate: update
             driverClassName:  'com.mysql.jdbc.Driver'
-            url: jdbc:mysql://localhost/streama
+            url: jdbc:mysql://localhost:8000/streama
             username: root
             password:
             properties:
