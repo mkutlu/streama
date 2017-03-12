@@ -1,6 +1,6 @@
 # streama v1.0.11
 
-
+Windows settings checking(Alperen).
 
 This dummy commit added by Alperen Boyaci.
 

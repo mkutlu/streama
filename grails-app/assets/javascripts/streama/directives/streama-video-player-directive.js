@@ -29,6 +29,7 @@ angular.module('streama').directive('streamaVideoPlayer', [
 				$scope.createNewPlayerSession = createNewPlayerSession;
         $scope.toggleTextTrack = toggleTextTrack;
         $scope.playerVolumeToggle = playerVolumeToggle;
+	//Buraya Google Analytics event tracking kod eklemeyi dusunuyorum.
 				$scope.play = play;
 				$scope.pause = pause;
 				$scope.closeVideo = closeVideo;
