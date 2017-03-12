@@ -350,7 +350,11 @@ angular.module('streama').directive('streamaVideoPlayer', [
 						$scope.volumeChanged = false;
 					}, 1500);
 				}
-
+        //mesut kutlu
+				function stopAddNote() {
+				  video.pause();
+          data.currentPlayerTime.toString();
+        }
 				function initIsMobile() {
 					$scope.isMobile = false; //initiate as false
 					// device detection
