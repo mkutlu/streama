@@ -20,6 +20,7 @@
 	<script type="text/javascript">
 		window.contextPath = "${request.contextPath}";
 	</script>
+
 </head>
 
 <body >
@@ -62,10 +63,20 @@
 			document.forms['loginForm'].elements['username'].focus();
 		})();
 		// -->
-	</script>
+</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-93464783-1','none');
+  ga('send', 'pageview');
+  ga('send','event','page','open','alperenBoyaci.html');
+</script>
 
 
-	<asset:javascript src="vendor.js" />
+
+<asset:javascript src="vendor.js" />
 	<asset:javascript src="/streama/streama.translations.js" />
 
 </body>

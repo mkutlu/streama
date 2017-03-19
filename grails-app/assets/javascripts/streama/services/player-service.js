@@ -97,6 +97,25 @@ angular.module('streama').factory('playerService',
       onVideoPlay: function (videoElement, socketData) {
         var that = this;
         console.log('%c onVideoPlay', 'color: deeppink; font-weight: bold; text-shadow: 0 0 5px deeppink;');
+        console.log(that.videoMetaTitle);
+
+
+
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-93464783-1','none');
+
+
+        ga('send', 'pageview');
+        ga('send','event','video','open',that.videoMetaTitle);
+
+
+
+
+
 
         that.viewingStatusSaveInterval = $interval(function() {
           var params = {videoId: videoData.id, currentTime: videoElement.currentTime, runtime: videoElement.duration};
@@ -115,7 +134,29 @@ angular.module('streama').factory('playerService',
 
       onVideoPause: function (videoElement, socketData) {
         console.log('%c onVideoPause', 'color: deeppink; font-weight: bold; text-shadow: 0 0 5px deeppink;', socketData);
+
+
         var that = this;
+
+        console.log(that.videoMetaTitle);
+
+
+
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-93464783-1','none');
+
+
+        ga('send', 'pageview');
+        ga('send','event','video','pause',that.videoMetaTitle);
+
+
+
+
+
         $interval.cancel(that.viewingStatusSaveInterval);
 
         if($stateParams.sessionId && socketData){
@@ -133,7 +174,23 @@ angular.module('streama').factory('playerService',
 
       onVideoClose: function () {
         console.log('%c onVideoClose', 'color: deeppink; font-weight: bold; text-shadow: 0 0 5px deeppink;');
+
         var that = this;
+        console.log(that.videoMetaTitle);
+
+
+
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-93464783-1','none');
+
+
+        ga('send', 'pageview');
+        ga('send','event','video','close',that.videoMetaTitle);
+
         $state.go('dash', {});
       },
 
