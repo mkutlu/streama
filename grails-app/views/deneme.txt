@@ -1,0 +1,6 @@
+sezonları arraylistte tut
+dugmeyi koy
+sıra sıra oynat
+boolean koy
+dugmeyi html kodlarla kodla
+

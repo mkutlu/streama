@@ -3,5 +3,5 @@ import streama.TvShow
 model {
 	TvShow tvShow
 }
-//burada eklentiler olacak
+
 json tmpl.tvShow(tvShow)

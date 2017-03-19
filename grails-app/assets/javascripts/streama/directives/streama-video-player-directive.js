@@ -29,6 +29,7 @@ angular.module('streama').directive('streamaVideoPlayer', [
 				$scope.createNewPlayerSession = createNewPlayerSession;
         $scope.toggleTextTrack = toggleTextTrack;
         $scope.playerVolumeToggle = playerVolumeToggle;
+	//Buraya Google Analytics event tracking kod eklemeyi dusunuyorum.
 				$scope.play = play;
 				$scope.pause = pause;
 				$scope.closeVideo = closeVideo;
@@ -350,7 +351,11 @@ angular.module('streama').directive('streamaVideoPlayer', [
 						$scope.volumeChanged = false;
 					}, 1500);
 				}
-
+        //mesut kutlu
+				function stopAddNote() {
+				  video.pause();
+          data.currentPlayerTime.toString();
+        }
 				function initIsMobile() {
 					$scope.isMobile = false; //initiate as false
 					// device detection
