@@ -117,6 +117,7 @@ angular.module('streama').factory('playerService',
 
 
 
+
         that.viewingStatusSaveInterval = $interval(function() {
           var params = {videoId: videoData.id, currentTime: videoElement.currentTime, runtime: videoElement.duration};
 
