@@ -19,7 +19,7 @@ environments:
             driverClassName:  'com.mysql.jdbc.Driver'
             url: jdbc:mysql://localhost:3306/streama
             username: root
-            password: alelah1313
+            password: root
     development-no-mysql:
             dataSource:
                 dbCreate: update
@@ -59,7 +59,7 @@ environments:
             driverClassName:  'com.mysql.jdbc.Driver'
             url: jdbc:mysql://localhost:8000/streama
             username: root
-            password: alelah1313
+            password: root
             properties:
                 jmxEnabled: true
                 initialSize: 5
