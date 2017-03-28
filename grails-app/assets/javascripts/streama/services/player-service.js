@@ -235,6 +235,15 @@ angular.module('streama').factory('playerService',
           }
         });
       },
+      onCreateNewNote: function () {
+        alertify.set({ buttonReverse: true, labels: {ok: "OK", cancel : "Cancel"}});
+        alertify.confirm($filter('translate')('MESSAGES.SHARE_SOCKET'), function (confirmed) {
+          if(confirmed){
+            $stateParams.sessionId = socketService.getUUID();
+            $state.go($state.current, $stateParams, {reload: true});
+          }
+        });
+      },
 
       handleMissingFileError: function (video) {
         var hasError = false;

@@ -26,7 +26,8 @@ angular.module('streama').directive('streamaVideoPlayer', [
 
 				$scope.showControls = showControls;
 				$scope.toggleSelectEpisodes = toggleSelectEpisodes;
-				$scope.createNewPlayerSession = createNewPlayerSession;
+        $scope.createNewPlayerSession = createNewPlayerSession;
+        $scope.createNewNote = createNewNote;
         $scope.toggleTextTrack = toggleTextTrack;
         $scope.playerVolumeToggle = playerVolumeToggle;
 	//Buraya Google Analytics event tracking kod eklemeyi dusunuyorum.
@@ -326,6 +327,10 @@ angular.module('streama').directive('streamaVideoPlayer', [
 				function createNewPlayerSession() {
 					$scope.options.onSocketSessionCreate();
 				}
+
+				function createNewNote() {
+          $scope.options.onCreateNewNote();
+        }
 
 				function toggleTextTrack() {
 					$scope.isTextTrackVisible = !$scope.isTextTrackVisible;
