@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('streama').factory('playerService',
-  function ($stateParams, $sce, $state, $rootScope, socketService, apiService, $interval, $filter, contextPath) {
+  function ($stateParams, $sce,$uibModal, $state, $rootScope, socketService, apiService, $interval, $filter, contextPath) {
 
     var videoData = null;
     var videoOptions;
@@ -22,6 +22,7 @@ angular.module('streama').factory('playerService',
       selectedEpisodes: [],
       currentEpisode: {},
       onSocketSessionCreate: angular.noop,
+      onCreateNewNote: angular.noop,
       onTimeChange: angular.noop,
       onError: angular.noop,
       onPlay: angular.noop,
@@ -88,6 +89,8 @@ angular.module('streama').factory('playerService',
         videoOptions.onNext = this.onNext.bind(videoOptions);
         videoOptions.onVideoClick = this.onVideoClick.bind(videoOptions);
         videoOptions.onSocketSessionCreate = this.onSocketSessionCreate.bind(videoOptions);
+        videoOptions.onCreateNewNote = this.onCreateNewNote.bind(videoOptions);
+
 
         return videoOptions;
       },
@@ -236,13 +239,17 @@ angular.module('streama').factory('playerService',
         });
       },
       onCreateNewNote: function () {
-        alertify.set({ buttonReverse: true, labels: {ok: "OK", cancel : "Cancel"}});
-        alertify.confirm($filter('translate')('MESSAGES.SHARE_SOCKET'), function (confirmed) {
-          if(confirmed){
-            $stateParams.sessionId = socketService.getUUID();
-            $state.go($state.current, $stateParams, {reload: true});
+        var modalInstance = $uibModal.open({
+          templateUrl: '/streama/modal--note.htm',
+          controller: 'modalGenericVideoCtrl',
+          size: 'lg',
+          resolve: {
+            video: function () {
+              return video;
+            }
           }
         });
+
       },
 
       handleMissingFileError: function (video) {

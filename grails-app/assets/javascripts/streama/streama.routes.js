@@ -105,7 +105,6 @@ angular.module('streama').config(function ($stateProvider) {
 			templateUrl: '/streama/admin-video.htm',
 			controller: 'adminVideoCtrl'
 		})
-
 		.state('admin.notifications', {
 			url: '/notifications',
 			templateUrl: '/streama/admin-notifications.htm',

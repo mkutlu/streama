@@ -291,8 +291,7 @@ angular.module('streama').directive('streamaVideoPlayer', [
 						if(!$scope.isMobile){
 							$scope.play();
 						}else{
-							$scope.pause();
-						}
+creat						}
 						$scope.videoDuration = video.duration;
 						video.currentTime = $scope.options.customStartingTime || 0;
 						$scope.currentTime = video.currentTime;
@@ -329,6 +328,7 @@ angular.module('streama').directive('streamaVideoPlayer', [
 				}
 
 				function createNewNote() {
+          $scope.pause();
           $scope.options.onCreateNewNote();
         }
 
