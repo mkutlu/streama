@@ -238,14 +238,14 @@ angular.module('streama').factory('playerService',
           }
         });
       },
-      onCreateNewNote: function () {
+      onCreateNewNote: function (note) {
         var modalInstance = $uibModal.open({
           templateUrl: '/streama/modal--note.htm',
-          controller: 'modalGenericVideoCtrl',
+          controller: 'modalNoteCtrl',
           size: 'lg',
           resolve: {
-            video: function () {
-              return video;
+            note: function () {
+              return note;
             }
           }
         });

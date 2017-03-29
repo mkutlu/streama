@@ -152,6 +152,21 @@ angular.module('streama').factory('apiService', function ($http, $rootScope, con
 				return $http.get('movie.json');
 			}
 		},
+    note: {
+      get: function (id) {
+        return $http.get('note/show.json', {params: {id: id}});
+      },
+      save: function (data) {
+        return $http.post('note/save.json', data);
+      },
+      delete: function (id) {
+        return $http.delete('note/delete.json', {params: {id: id}});
+      },
+      list: function () {
+        return $http.get('note.json');
+      }
+
+    },
 
 		genericVideo: {
 			get: function (id) {
@@ -166,6 +181,7 @@ angular.module('streama').factory('apiService', function ($http, $rootScope, con
 			list: function () {
 				return $http.get('genericVideo.json');
 			}
+
 		},
 
 		viewingStatus: {
