@@ -4,7 +4,7 @@ angular.module('streama').filter('padnumber', [function () {
 	return function(input, length) {
 		return pad(input, length);
 	};
-	
+
 }]);
 
 
@@ -19,6 +19,11 @@ angular.module('streama').filter('trustResourceUrl', ['$sce', function($sce) {
 		return $sce.trustAsResourceUrl(input);
 	};
 }]);
+angular.module('streama').filter('secondsToDateTime', [function() {
+  return function(seconds) {
+    return new Date(1970, 0, 1).setSeconds(seconds);
+  };
+}])
 
 
 function pad(n, width, z) {

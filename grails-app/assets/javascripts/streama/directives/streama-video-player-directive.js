@@ -329,7 +329,7 @@ creat						}
 
 				function createNewNote() {
           $scope.pause();
-          $scope.options.onCreateNewNote();
+          $scope.options.onCreateNewNote(video.currentTime);
         }
 
 				function toggleTextTrack() {
@@ -356,11 +356,6 @@ creat						}
 						$scope.volumeChanged = false;
 					}, 1500);
 				}
-        //mesut kutlu
-				function stopAddNote() {
-				  video.pause();
-          data.currentPlayerTime.toString();
-        }
 				function initIsMobile() {
 					$scope.isMobile = false; //initiate as false
 					// device detection

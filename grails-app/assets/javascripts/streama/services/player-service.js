@@ -238,7 +238,8 @@ angular.module('streama').factory('playerService',
           }
         });
       },
-      onCreateNewNote: function (note) {
+      onCreateNewNote: function (time, note) {
+        var databaseParams = {"title":videoOptions.videoMetaTitle, "time":time,"userId":$rootScope.currentUser.id};
         var modalInstance = $uibModal.open({
           templateUrl: '/streama/modal--note.htm',
           controller: 'modalNoteCtrl',
@@ -246,6 +247,9 @@ angular.module('streama').factory('playerService',
           resolve: {
             note: function () {
               return note;
+            },
+            databaseParams: function () {
+              return databaseParams;
             }
           }
         });
