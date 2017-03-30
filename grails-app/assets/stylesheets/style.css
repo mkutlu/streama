@@ -126,7 +126,7 @@ label {
 
 .form-control option {
   color: black;}
-  
+
 .form-control[disabled] {
   background-color: rgba(255, 255, 255, 0.12);
   opacity: 0.5; }
@@ -5231,5 +5231,15 @@ body.mdx-active #mdx-control-view {
     width: calc(50% - 15px); }
     .media-poster-item .media-item {
       height: auto; } }
+
+
+#share-media-alperen img {
+
+  width: 35px;
+  padding: 5px;
+  border: 0;
+  box-shadow: 0;
+  display: inline;
+}
 
 /*# sourceMappingURL=style.css.map */
